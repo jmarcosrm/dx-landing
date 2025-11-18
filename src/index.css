@@ -185,3 +185,8 @@ html {
 .font-horta {
   font-family: 'Horta', 'Space Grotesk', Inter, system-ui, -apple-system, sans-serif;
 }
+
+.content-auto {
+  content-visibility: auto;
+  contain-intrinsic-size: 1000px;
+}

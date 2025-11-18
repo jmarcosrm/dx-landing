@@ -9,7 +9,7 @@ export const Features: React.FC = () => {
   const scale = useTransform(scrollYProgress, [0, 1], [1, 0.985])
   const opacity = useTransform(scrollYProgress, [0, 1], [1, 0.93])
   return (
-    <motion.section id="features" className="py-12 md:py-24" ref={ref} style={{ scale, opacity }}>
+    <motion.section id="features" className="py-12 md:py-24 content-auto" ref={ref} style={{ scale, opacity }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

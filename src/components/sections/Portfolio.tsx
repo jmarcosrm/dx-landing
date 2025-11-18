@@ -1,5 +1,5 @@
 import React, { useRef } from 'react'
-import { motion, useScroll, useTransform } from 'motion/react'
+import { motion, useScroll, useTransform } from 'framer-motion'
 import CircularGallery, { GalleryItem } from '@/components/portfolio/CircularGallery'
 import { copy } from '@/lib/copy'
 //
@@ -19,7 +19,7 @@ export const Portfolio: React.FC<PortfolioProps> = ({ variant: _variant = 'defau
   const scale = useTransform(scrollYProgress, [0, 1], [1, 0.985])
   const opacity = useTransform(scrollYProgress, [0, 1], [1, 0.93])
   return (
-    <motion.section id="portfolio" className="py-14 md:py-28" ref={ref} style={{ scale, opacity }}>
+    <motion.section id="portfolio" className="py-14 md:py-28 content-auto" ref={ref} style={{ scale, opacity }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

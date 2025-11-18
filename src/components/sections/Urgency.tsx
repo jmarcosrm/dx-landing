@@ -14,7 +14,7 @@ interface UrgencyProps {
 
 export const Urgency: React.FC<UrgencyProps> = ({ variant: _variant = 'default', styles }) => {
   return (
-    <section className="py-20 md:py-32 relative overflow-visible">
+    <section className="py-20 md:py-32 relative overflow-visible content-auto">
       {/* Background pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className={`absolute inset-0 bg-gradient-to-br from-${styles?.accentColor || 'accent'} via-${styles?.accentColor || 'accent'}/50 to-transparent`}></div>
@@ -68,7 +68,7 @@ export const Urgency: React.FC<UrgencyProps> = ({ variant: _variant = 'default',
 
           <div className="mt-8 max-w-3xl mx-auto">
             <Button size="lg" className={`bg-${styles?.ctaColor?.replace('bg-', '') || styles?.accentColor?.replace('text-', '') || 'accent'} hover:bg-${styles?.ctaColor?.replace('bg-', '') || styles?.accentColor?.replace('text-', '') || 'accent'}/90 text-white px-8 py-6 rounded-xl shadow-soft inline-flex items-center space-x-2 w-full`}>
-              <span>Sim, quero meu sistema agora — antes que os 7 esgotem</span>
+              <span>Garantir Oportunidade Agora</span>
               <Zap className="w-5 h-5" />
             </Button>
           </div>

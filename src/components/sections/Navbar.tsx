@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { motion } from 'motion/react'
+import { motion } from 'framer-motion'
 //
 
 const navItems = [
@@ -62,8 +62,10 @@ export const Navbar: React.FC<NavbarProps> = ({ currentSection: _currentSection,
               src="https://www.dxtechsolutions.com.br/lovable-uploads/98349465-18d0-41e2-93ce-b9cf160d3568.png"
               alt="DX Tech"
               className="h-8 w-auto object-contain"
-              loading="eager"
+              loading="lazy"
               decoding="async"
+              width={160}
+              height={40}
             />
           </motion.a>
 

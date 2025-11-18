@@ -5,6 +5,7 @@ import { TrustBar } from './components/sections/TrustBar'
 import { ValueProp } from './components/sections/ValueProp'
 import { Features } from './components/sections/Features'
 import { Portfolio } from './components/sections/Portfolio'
+import { HighlightsSection } from './components/sections/HighlightsSection'
 import { Pricing } from './components/sections/Pricing'
 import { Timeline } from './components/sections/Timeline'
 import { Authority } from './components/sections/Authority'
@@ -75,6 +76,7 @@ function App({ variant = 'default' }: AppProps) {
           <ValueProp variant={variant} styles={styles} />
             <Features />
             <Portfolio variant={variant} styles={styles} />
+            <HighlightsSection variant={variant} styles={styles} />
             <Pricing variant={variant} styles={styles} />
             <Timeline variant={variant} styles={styles} />
             <Authority variant={variant} styles={styles} />

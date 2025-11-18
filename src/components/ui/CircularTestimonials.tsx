@@ -167,6 +167,11 @@ export const CircularTestimonials: React.FC<CircularTestimonialsProps> = ({
               alt={t.name}
               className="absolute inset-0 w-full h-full object-cover rounded-2xl shadow-[0_10px_30px_rgba(0,0,0,0.2)]"
               style={getImageStyle(idx)}
+              loading="lazy"
+              decoding="async"
+              sizes="(max-width: 768px) 100vw, 50vw"
+              width={1200}
+              height={800}
             />
           ))}
         </div>
