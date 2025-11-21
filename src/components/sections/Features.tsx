@@ -18,11 +18,11 @@ export const Features: React.FC = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-white shadow-title mb-6 tracking-tight">
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground shadow-title mb-6 tracking-tight">
             {copy.features.title}
           </h2>
           {copy.features.subtitle && (
-            <p className="text-xl text-textSecondary max-w-3xl mx-auto">
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               {copy.features.subtitle}
             </p>
           )}
@@ -69,12 +69,12 @@ export const Features: React.FC = () => {
           ]}
           autoplay={true}
           colors={{
-            name: '#ffffff',
-            designation: '#9ca3af',
-            testimony: '#d1d5db',
-            arrowBackground: '#141414',
-            arrowForeground: '#f9fafb',
-            arrowHoverBackground: '#ef4444',
+            name: 'hsl(var(--foreground))',
+            designation: 'hsl(var(--muted-foreground))',
+            testimony: 'hsl(var(--muted-foreground))',
+            arrowBackground: 'hsl(var(--secondary))',
+            arrowForeground: 'hsl(var(--foreground))',
+            arrowHoverBackground: 'hsl(var(--accent))',
           }}
           fontSizes={{ name: '1.25rem', designation: '0.95rem', quote: '1rem' }}
         />

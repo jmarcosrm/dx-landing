@@ -56,9 +56,9 @@ export const EmblaCarousel: React.FC<EmblaCarouselProps> = ({ items }) => {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
                 <div className="p-6">
-                  <h3 className="text-lg font-semibold text-textPrimary mb-2">{item.title}</h3>
+                  <h3 className="text-lg font-semibold text-foreground mb-2">{item.title}</h3>
                   <div className="flex items-center justify-between mb-2">
-                    <span className="text-sm text-textSecondary">{item.sector}</span>
+                    <span className="text-sm text-muted-foreground">{item.sector}</span>
                     <span className="text-sm font-semibold text-accent">{item.result}</span>
                   </div>
                   {item.caseUrl && (

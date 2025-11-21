@@ -6,24 +6,24 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-  	extend: {
-  		colors: {
-  			background: 'hsl(var(--background))',
-  			surface: '#000000',
-  			surfaceElevated: '#000000',
-  			textPrimary: '#EDEDED',
-  			textSecondary: '#EDEDED',
-  			accent: {
-  				DEFAULT: 'hsl(var(--accent))',
-  				foreground: 'hsl(var(--accent-foreground))'
-  			},
-  			accentSoft: '#9B1C1C',
-  			stroke: '#000000',
-  			foreground: 'hsl(var(--foreground))',
-  			card: {
-  				DEFAULT: 'hsl(var(--card))',
-  				foreground: 'hsl(var(--card-foreground))'
-  			},
+		extend: {
+			colors: {
+				background: 'hsl(var(--background))',
+				surface: 'hsl(var(--background))',
+				surfaceElevated: 'hsl(var(--secondary))',
+				textPrimary: 'hsl(var(--foreground))',
+				textSecondary: 'hsl(var(--muted-foreground))',
+				accent: {
+					DEFAULT: 'hsl(var(--accent))',
+					foreground: 'hsl(var(--accent-foreground))'
+				},
+				accentSoft: 'hsl(var(--accent-soft))',
+				stroke: 'hsl(var(--border))',
+				foreground: 'hsl(var(--foreground))',
+				card: {
+					DEFAULT: 'hsl(var(--card))',
+					foreground: 'hsl(var(--card-foreground))'
+				},
   			popover: {
   				DEFAULT: 'hsl(var(--popover))',
   				foreground: 'hsl(var(--popover-foreground))'

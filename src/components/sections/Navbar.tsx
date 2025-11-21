@@ -46,7 +46,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentSection: _currentSection,
       animate={{ y: 0 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled 
-          ? 'bg-background/95 backdrop-blur-lg border-b border-stroke' 
+          ? 'bg-background/95 backdrop-blur-lg border-b border-border' 
           : 'bg-transparent'
       }`}
     >
@@ -75,7 +75,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentSection: _currentSection,
               <button
                 key={item.name}
                 onClick={() => scrollToSection(item.href)}
-                className="text-textSecondary hover:text-textPrimary transition-colors duration-200 font-medium"
+                className="text-muted-foreground hover:text-foreground transition-colors duration-200 font-medium"
               >
                 {item.name}
               </button>

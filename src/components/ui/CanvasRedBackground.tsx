@@ -24,6 +24,10 @@ export default function CanvasRedBackground() {
     if (!canvas) return
     const ctx = canvas.getContext("2d", { alpha: true })
     if (!ctx) return
+    const styles = getComputedStyle(document.documentElement)
+    const accent = styles.getPropertyValue('--accent').trim()
+    const accentSoft = styles.getPropertyValue('--accent-soft').trim()
+    const foreground = styles.getPropertyValue('--foreground').trim()
 
     const resizeCanvas = () => {
       const dpr = Math.min(window.devicePixelRatio || 1, 2)
@@ -62,7 +66,7 @@ export default function CanvasRedBackground() {
     }
 
     const drawGrid = (c: CanvasRenderingContext2D, width: number, height: number) => {
-      c.strokeStyle = "rgba(255, 42, 42, 0.04)"
+      c.strokeStyle = `hsla(${accent} / 0.04)`
       c.lineWidth = 0.5
       const gridSize = 48
       for (let x = 0; x < width; x += gridSize) { c.beginPath(); c.moveTo(x, 0); c.lineTo(x, height); c.stroke() }
@@ -77,20 +81,20 @@ export default function CanvasRedBackground() {
       c.rotate(rotation)
       c.beginPath()
       c.ellipse(0, 0, rx, ry, 0, 0, Math.PI * 2)
-      c.strokeStyle = "rgba(255, 42, 42, 0.08)"
+      c.strokeStyle = `hsla(${accent} / 0.08)`
       c.lineWidth = 1
       c.stroke()
       const x = Math.cos(angle) * rx
       const y = Math.sin(angle) * ry
       const gradient = c.createRadialGradient(x, y, 0, x, y, 20)
-      gradient.addColorStop(0, "rgba(255, 42, 42, 0.4)")
-      gradient.addColorStop(0.5, "rgba(255, 42, 42, 0.1)")
-      gradient.addColorStop(1, "rgba(255, 42, 42, 0)")
+      gradient.addColorStop(0, `hsla(${accent} / 0.4)`)
+      gradient.addColorStop(0.5, `hsla(${accent} / 0.1)`)
+      gradient.addColorStop(1, `hsla(${accent} / 0)`)
       c.fillStyle = gradient
       c.beginPath()
       c.arc(x, y, 20, 0, Math.PI * 2)
       c.fill()
-      c.fillStyle = "rgba(255, 42, 42, 0.8)"
+      c.fillStyle = `hsla(${accent} / 0.8)`
       c.beginPath()
       c.arc(x, y, 2, 0, Math.PI * 2)
       c.fill()
@@ -104,7 +108,7 @@ export default function CanvasRedBackground() {
         if (p.y < 0 || p.y > height) p.vy *= -1
         p.x = Math.max(0, Math.min(width, p.x))
         p.y = Math.max(0, Math.min(height, p.y))
-        c.fillStyle = `rgba(255, 255, 255, ${p.opacity})`
+        c.fillStyle = `hsla(${foreground} / ${p.opacity})`
         c.beginPath(); c.arc(p.x, p.y, p.size, 0, Math.PI * 2); c.fill()
       })
     }
@@ -112,9 +116,9 @@ export default function CanvasRedBackground() {
     const drawRadialGlow = (c: CanvasRenderingContext2D, width: number, height: number, time: number) => {
       const pulse = Math.sin(time * 0.0008) * 0.15 + 0.85
       const g = c.createRadialGradient(width * 0.5, height * 0.5, 0, width * 0.5, height * 0.5, Math.max(width, height) * 0.6)
-      g.addColorStop(0, `rgba(139, 0, 0, ${0.12 * pulse})`)
-      g.addColorStop(0.5, `rgba(139, 0, 0, ${0.06 * pulse})`)
-      g.addColorStop(1, "rgba(139, 0, 0, 0)")
+      g.addColorStop(0, `hsla(${accentSoft} / ${0.12 * pulse})`)
+      g.addColorStop(0.5, `hsla(${accentSoft} / ${0.06 * pulse})`)
+      g.addColorStop(1, `hsla(${accentSoft} / 0)`)
       c.fillStyle = g
       c.fillRect(0, 0, width, height)
     }
@@ -142,5 +146,5 @@ export default function CanvasRedBackground() {
     }
   }, [shouldAnimate])
 
-  return <canvas ref={canvasRef} className="fixed inset-0 z-0 w-full h-full pointer-events-none" style={{ background: "linear-gradient(135deg, #0B0B0F 0%, #111317 100%)" }} />
+  return <canvas ref={canvasRef} className="fixed inset-0 z-0 w-full h-full pointer-events-none" style={{ background: "linear-gradient(135deg, hsl(var(--background)) 0%, hsl(var(--secondary)) 100%)" }} />
 }

@@ -43,15 +43,15 @@ export const Footer: React.FC<FooterProps> = ({ variant: _variant = 'default', s
             <Badge className={`mb-4 bg-${styles?.accentColor || 'accent'}/10 text-${styles?.accentColor || 'accent'} border-${styles?.accentColor || 'accent'}/20`}>
               Vamos começar?
             </Badge>
-            <h2 className="text-3xl md:text-4xl font-bold text-textPrimary mb-6 tracking-tight">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6 tracking-tight">
               Pronto para transformar seu negócio?
             </h2>
-            <p className="text-xl text-textSecondary mb-8 max-w-2xl mx-auto">
+            <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
               Entre em contato hoje mesmo e descubra como podemos criar uma landing page que converte visitantes em clientes pagantes.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 
-                className="bg-red-600 hover:bg-red-500 text-white px-8 py-6 text-lg"
+                className="bg-accent hover:bg-accent/90 text-accent-foreground px-8 py-6 text-lg"
                 onClick={() => {
                   const whatsappNumber = import.meta.env.VITE_WHATSAPP_NUMBER || '5511999999999'
                   const message = import.meta.env.VITE_WHATSAPP_DEFAULT_MESSAGE || 'Olá! Gostaria de falar com a equipe DX Tech.'
@@ -66,7 +66,7 @@ export const Footer: React.FC<FooterProps> = ({ variant: _variant = 'default', s
               </Button>
               <Button 
                 variant="outline"
-                className="border-stroke text-textPrimary hover:border-red px-8 py-6 text-lg"
+                className="border-border text-foreground hover:border-accent px-8 py-6 text-lg"
                 onClick={() => {
                   const whatsappNumber = import.meta.env.VITE_WHATSAPP_NUMBER || '5511999999999'
                   const message = 'Olá! Quero agendar uma chamada.'
@@ -98,17 +98,17 @@ export const Footer: React.FC<FooterProps> = ({ variant: _variant = 'default', s
                 decoding="async"
               />
             </div>
-            <p className="text-textSecondary mb-6">
+            <p className="text-muted-foreground mb-6">
               Transformando visitantes em clientes com landing pages de alta conversão.
             </p>
             <div className="flex space-x-4">
-              <button className={`w-10 h-10 bg-surface/30 rounded-lg flex items-center justify-center text-textSecondary hover:text-${styles?.accentColor || 'accent'} hover:border-${styles?.accentColor || 'accent'} border border-stroke transition-colors`}>
+              <button className={`w-10 h-10 bg-secondary/30 rounded-lg flex items-center justify-center text-muted-foreground hover:text-${styles?.accentColor || 'accent'} hover:border-${styles?.accentColor || 'accent'} border border-border transition-colors`}>
                 <Github className="w-5 h-5" />
               </button>
-              <button className={`w-10 h-10 bg-surface/30 rounded-lg flex items-center justify-center text-textSecondary hover:text-${styles?.accentColor || 'accent'} hover:border-${styles?.accentColor || 'accent'} border border-stroke transition-colors`}>
+              <button className={`w-10 h-10 bg-secondary/30 rounded-lg flex items-center justify-center text-muted-foreground hover:text-${styles?.accentColor || 'accent'} hover:border-${styles?.accentColor || 'accent'} border border-border transition-colors`}>
                 <Linkedin className="w-5 h-5" />
               </button>
-              <button className={`w-10 h-10 bg-surface/30 rounded-lg flex items-center justify-center text-textSecondary hover:text-${styles?.accentColor || 'accent'} hover:border-${styles?.accentColor || 'accent'} border border-stroke transition-colors`}>
+              <button className={`w-10 h-10 bg-secondary/30 rounded-lg flex items-center justify-center text-muted-foreground hover:text-${styles?.accentColor || 'accent'} hover:border-${styles?.accentColor || 'accent'} border border-border transition-colors`}>
                 <Twitter className="w-5 h-5" />
               </button>
             </div>
@@ -116,12 +116,12 @@ export const Footer: React.FC<FooterProps> = ({ variant: _variant = 'default', s
         </div>
 
         {/* Divider */}
-        <div className="border-t border-stroke mt-12 pt-8">
+        <div className="border-t border-border mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <p className="text-textSecondary text-sm">
+            <p className="text-muted-foreground text-sm">
               © 2024 DX Tech. Todos os direitos reservados.
             </p>
-            <div className="flex items-center space-x-6 text-sm text-textSecondary">
+            <div className="flex items-center space-x-6 text-sm text-muted-foreground">
               <button 
                 onClick={scrollToTop}
                 className={`flex items-center space-x-1 hover:text-${styles?.accentColor || 'accent'} transition-colors`}

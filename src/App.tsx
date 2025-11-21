@@ -66,8 +66,8 @@ function App({ variant = 'default' }: AppProps) {
           <TrustBar />
           <section className="py-6 md:py-8">
             <div className="max-w-4xl mx-auto px-4">
-              <Card className="bg-surface/30 border border-stroke rounded-xl p-5 md:p-8 text-center">
-                <p className="text-sm md:text-base text-textSecondary">
+              <Card className="bg-secondary/30 border border-border rounded-xl p-5 md:p-8 text-center">
+                <p className="text-sm md:text-base text-muted-foreground">
                   A Black System Friday é o momento em que abrimos nossa tecnologia premium para negócios ambiciosos que entendem: investir em sistema não é gasto, é vantagem competitiva.
                 </p>
               </Card>

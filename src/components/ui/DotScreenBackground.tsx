@@ -5,12 +5,16 @@ import * as THREE from 'three'
 function DotMesh() {
   const { size, viewport } = useThree()
   const material = useMemo(() => {
+    const root = document.documentElement
+    const styles = getComputedStyle(root)
+    const accent = styles.getPropertyValue('--accent').trim()
+    const background = styles.getPropertyValue('--background').trim()
     return new THREE.ShaderMaterial({
       uniforms: {
         time: { value: 0 },
         resolution: { value: new THREE.Vector2() },
-        dotColor: { value: new THREE.Color('#FF2D2D') },
-        bgColor: { value: new THREE.Color('#000000') },
+        dotColor: { value: new THREE.Color(`hsl(${accent})`) },
+        bgColor: { value: new THREE.Color(`hsl(${background})`) },
         rotation: { value: 0 },
         gridSize: { value: 80 },
         dotOpacity: { value: 0.06 },

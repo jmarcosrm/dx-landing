@@ -30,11 +30,11 @@ export const Authority: React.FC<AuthorityProps> = ({ variant: _variant = 'defau
           className="text-center mb-16"
         >
           <Badge className={`mb-4 bg-accent/10 text-accent border-accent/20`}>Clientes Satisfeitos</Badge>
-          <h2 className="text-4xl md:text-5xl font-bold text-textPrimary mb-6 tracking-tight">
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 tracking-tight">
             {copy.authority.title}
           </h2>
           {copy.authority.subtitle && (
-            <p className="text-xl text-textSecondary max-w-3xl mx-auto">
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               {copy.authority.subtitle}
             </p>
           )}
@@ -49,7 +49,7 @@ export const Authority: React.FC<AuthorityProps> = ({ variant: _variant = 'defau
               transition={{ duration: 0.8, delay: index * 0.2 }}
               viewport={{ once: true }}
             >
-              <Card className={`relative h-full border-transparent rounded-lg transform transition-all duration-200 will-change-transform hover:scale-[1.002] hover:shadow-[0_0_2px_rgba(255,45,45,0.06)]`}>
+              <Card className={`relative h-full border-transparent rounded-lg transform transition-all duration-200 will-change-transform hover:scale-[1.002] hover:shadow-[0_0_2px_hsl(var(--accent)_/_0.06)]`}>
                 <div className="pointer-events-none absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-${styles?.accentColor || 'accent'}/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <CardHeader className="pb-4">
                   <div className="flex items-center justify-between mb-4">
@@ -62,18 +62,18 @@ export const Authority: React.FC<AuthorityProps> = ({ variant: _variant = 'defau
                   </div>
                   <div className="flex items-center space-x-3">
                     <div className={`w-12 h-12 rounded-full bg-gradient-to-br from-${styles?.accentColor || 'accent'} to-${styles?.accentColor || 'accent'}/60 flex items-center justify-center`}>
-                      <span className="text-white font-bold text-lg">
+                      <span className="text-accent-foreground font-bold text-lg">
                         {testimonial.name.charAt(0)}
                       </span>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-textPrimary">{testimonial.name}</h4>
-                      <p className="text-sm text-textSecondary">{testimonial.role}</p>
+                      <h4 className="font-semibold text-foreground">{testimonial.name}</h4>
+                      <p className="text-sm text-muted-foreground">{testimonial.role}</p>
                     </div>
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-textSecondary italic">{testimonial.content}</p>
+                  <p className="text-muted-foreground italic">{testimonial.content}</p>
                   {(testimonial as any).result && (
                     <div className={`mt-4 p-3 bg-${styles?.accentColor || 'accent'}/10 rounded-lg border border-${styles?.accentColor || 'accent'}/20`}>
                       <p className={`text-${styles?.accentColor || 'accent'} font-medium text-sm`}>{(testimonial as any).result}</p>
@@ -94,14 +94,14 @@ export const Authority: React.FC<AuthorityProps> = ({ variant: _variant = 'defau
           className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 text-center"
         >
           {copy.authority.stats.map((stat, index) => (
-            <div key={index} className="space-y-2">
+              <div key={index} className="space-y-2">
               <div className={`text-3xl md:text-4xl font-bold text-${styles?.accentColor || 'accent'}`}>
                 {stat.value}
               </div>
-              <div className="text-textSecondary text-sm">
+              <div className="text-muted-foreground text-sm">
                 {stat.label}
               </div>
-            </div>
+              </div>
           ))}
         </motion.div>
       </div>
